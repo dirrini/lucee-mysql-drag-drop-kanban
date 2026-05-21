@@ -1,26 +1,43 @@
-# Lucee + MySQL Example
+# ⚡ Lucee Kanban Engine
 
-Projeto mínimo em Lucee que acessa a tabela `mensagens` e exibe as mensagens e seus autores na página.
+A fast, modern, and lightweight Kanban Board system built with an enterprise-grade backend powered by **Lucee (ColdFusion)** and an ultra-sleek frontend using **Tailwind CSS**, **daisyUI v5**, and **SortableJS**.
 
-## Como usar
+---
 
-1. Execute `docker compose up -d`
-2. Abra no navegador: http://localhost:1988
+## 🚀 Tech Stack
 
-## Estrutura
+| Layer | Technology | Description |
+| :--- | :--- | :--- |
+| **Backend** | [Lucee v5+](https://lucee.org/) | Open-source ColdFusion (CFML) engine acting as a high-performance REST API wrapper. |
+| **Database** | [MySQL 8.0](https://www.mysql.com/) | Relational storage utilizing atomic transaction blocks for indexing board entities. |
+| **Frontend** | [Tailwind CSS v4](https://tailwindcss.com/) | Utility-first CSS compiling via runtime runtime parsing engine. |
+| **UI Kit** | [daisyUI v5](https://daisyui.com/) | Semantic component framework offering native dark/light theme switching parameters. |
+| **UX Engine** | [SortableJS](https://sortablejs.github.io/Sortable/) | No-dependency, fluid drag-and-drop mechanics handling drop behaviors. |
 
-- `docker-compose.yml` - ambiente Lucee + MySQL
-- `db/init-db.sql` - cria a base `luceeapp` e a tabela `mensagens`
-- `src/Application.cfc` - configura o datasource `mydb`
-- `src/index.cfm` - consulta `mensagens` e as exibe
+---
 
-## Resultado esperado
+## 🎨 UI & Features
 
-A página deve mostrar:
+*   **Fluid Drag-and-Drop:** Items snap dynamically across columns with responsive velocity metrics using SortableJS.
+*   **Modern Typography:** Global structural styles utilize the **Plus Jakarta Sans** geometric display font for maximum crispness.
+*   **Contextual Avatars:** Automatic fallback placeholders featuring contrasting foreground initials computed securely by Lucee parsing scripts.
+*   **Responsive Flow Layouts:** Dynamic viewport column grids that support seamless horizontal scrolling if your pipeline tracks multiple statuses.
 
-```
-**Autor 1** Mensagem 1
-**Autor 2** Mensagem 2
-**Autor 3** Mensagem 3
-...
-```
+---
+
+## 📁 Project Architecture
+
+```text
+your-project/
+│
+├── db/
+│   └── init-db.sql       # Database schemas & sequence initializations
+│
+├── src/                  # Lucee Context Root (.cfm / .cfc)
+│   ├── api/              # Pure backend endpoints (JSON payloads only)
+│   │   ├── Application.cfc
+│   │   └── update_order.cfm
+│   └── index.cfm         # Main visual pipeline viewport template
+│
+├── docker-compose.yml    # Main stack orchestration layer
+└── README.md
